@@ -1,1 +1,1 @@
-# basic-gpu-render
+# Basic Python script for graphics rendering
