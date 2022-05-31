@@ -6,7 +6,6 @@ import math
 import numpy 		as np
 import itertools
 import graphics
-import random
 
 # Function Declarations
 def read_model(filename):
