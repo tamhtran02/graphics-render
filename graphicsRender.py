@@ -1,5 +1,15 @@
 # Note: THis uses a left-handed coordinate system in the clip space
 
+'''
+	Information about the pictures
+		scene1.png: Light and Camera are at the same position, no rotation or translation, scale = 1
+		scene2.png: Light and Camera are at the same position, rotated by 180 degrees along x axis, scale = 1, no translation
+		scene3.png: Light and Camera are at the same position, rotated by 180 degrees along x and y axis, scale = 1, translated a bit
+		scene4.png: Camera is in a different location than the light, shows shark as if the light is somewhere below it, rotated by 180 degrees along x axis
+		scene5.png: Shark is scaled by 0.5, translated a bit, and the light is now red. Camera and light are in different places, and the background is blue
+	I hope this is enough to show the capabilities of my program :)
+'''
+
 # Imports
 import Constants 	as c
 import math
@@ -226,7 +236,7 @@ postClip = clip_sort(preClip)
 # Draw the image
 winSize = 1000
 win=graphics.GraphWin("Render",winSize,winSize)
-win.setBackground("black")
+win.setBackground(c.backgroundColor)
 for vertex1, vertex2, vertex3, rgb in postClip:
 	vertices = [graphics.Point((vertex1[0] * winSize) + winSize/2, (-vertex1[1] * winSize) + winSize/2), graphics.Point((vertex2[0] * winSize) + winSize/2, (-vertex2[1] * winSize) + winSize/2), graphics.Point((vertex3[0] * winSize) + winSize/2, (-vertex3[1] * winSize) + winSize/2)]
 	color = graphics.color_rgb(int(rgb[0] * 256), int(rgb[1] * 256), int(rgb[2] * 256))
@@ -234,6 +244,6 @@ for vertex1, vertex2, vertex3, rgb in postClip:
 	triangle.setFill(color)
 	triangle.draw(win)
 
-print("done")
+print("Image rendered, click the window to close it")
 win.getMouse()
 win.close() 

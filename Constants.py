@@ -1,6 +1,8 @@
 # Constants to change, change these for different renders
 # General
 FILENAME = "shark_ag.raw"
+backgroundColor = "black"
+
 '''
 	Light and Camera
 '''
@@ -29,7 +31,7 @@ Z_SCALE = 1
 # Object Rotation in Direct3D conventions: Angles are measured clockwise when looking along the rotation axis toward the origin.
 X_ROT   = 0
 Y_ROT   = 0
-Z_ROT   =   0
+Z_ROT   = 0
 # Object Translation
 X_TRAN  = 0
 Y_TRAN  = 0
